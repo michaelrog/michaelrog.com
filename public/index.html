@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en" id="bgCodeSource">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Michael Rog : code for humans</title>
+
+	<script>
+
+		makeCodeSpans = function makeCodeSpans(sourceId, targetId)
+		{
+
+			var sourceElement = document.getElementById(sourceId);
+			var targetElement = document.getElementById(targetId);
+
+			var text = sourceElement.innerHTML;
+
+			targetElement.innerHTML = null;
+
+			for (var i = 0, length = text.length; i < length; i++) {
+				var span = document.createElement('span');
+				var char = (text[i].match(/\s/g) ? span.innerHTML = '&nbsp;' : span.appendChild(document.createTextNode(text[i])));
+				targetElement.appendChild(span);
+			}
+
+		};
+
+	</script>
+
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Raleway:400" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="bgCodeContainer" class="bgCode"></div>
+
+	<div class="awesomeSauce superBio">
+		<em>I write <a href="https://github.com/michaelrog">code</a>.</em> <em>I teach.</em> <em>I <a href="http://cirquelavie.net">fly</a> on trapeze.</em> <em>I <a href="https://topshelfcraft.com">bring your vision to life</a> on&nbsp;the&nbsp;web.</em>
+	</div>
+
+	<div class="awesomeSauce contactInfo">
+		<br> &#109;ichael &#64; &#109;ichaelrog.co&#109;
+		<br> &#55;&#49;&#51;.581.4764
+		<br> <a href="https://twitter.com/michaelrog">/ michaelrog</a>
+	</div>
+
+	<script>
+		(function(){makeCodeSpans('bgCodeSource', 'bgCodeContainer')})();
+	</script>
+
+	<style>
+
+		body {
+			color: #fff;
+			background-color: #111;
+		}
+
+		.bgCode {
+			box-sizing: border-box;
+			cursor: default;
+			font-family: monospace;
+			margin: 30px;
+			overflow: hidden;
+			position: fixed;
+		}
+
+		.bgCode span {
+			display: block;
+			float: left;
+			font-size: 13px;
+			line-height: 1;
+			opacity: .2;
+			padding: 10px;
+			transition: all 2s linear;
+		}
+
+		.bgCode span:hover,
+		.bgCode span:hover + span,
+		.bgCode span:hover + span + span,
+		.bgCode span:hover + span + span + span + span + span + span + span + span + span + span + span + span {
+			background: #222;
+			color: #9f9;
+			opacity: 1;
+			transition: all 0.05s linear;
+		}
+
+		.awesomeSauce {
+			font-family: "Abril Fatface", serif;
+			min-width: 100px;
+			max-width: 72%;
+			position: absolute;
+			letter-spacing: .4px;
+			background: #111;
+		}
+		.superBio {
+			font-size: 1.5rem;
+			left: 10px;
+			line-height: 1.3;
+			padding: 15px;
+			top: 84px;
+			z-index: 42;
+		}
+
+		.contactInfo {
+			bottom: 60px;
+			font-size: 1rem;
+			line-height: 2;
+			padding: 15px;
+			position: fixed;
+			right: 24px;
+			z-index: 42;
+		}
+
+		a, a:link, a:visited, a:active {
+			border-bottom: 1px dotted #334;
+			color: #fff;
+			text-decoration: none;
+			transition: all .5s ease;
+		}
+		a:hover {
+			color: #99f;
+		}
+
+		.superBio em { font-style: normal; }
+
+		#ASTEROIDS-NAVIGATION, #ASTEROIDS-NAVIGATION *, #ASTEROIDS-POINTS {
+			font-family: "Abril Fatface", serif !important;
+			color: white !important;
+			background: #111 !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+	</style>
+
+	<script>
+
+		var konamiKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+		var konamiIndex = 0;
+
+		konamiHandler = function(e) {
+
+			if (e.keyCode === konamiKeys[konamiIndex++])
+			{
+				if (konamiIndex === konamiKeys.length)
+				{
+					window.removeEventListener("keydown", konamiHandler);
+					(function (k, o, n, a, m, i) {
+						m = o.createElement(n);
+						i = o.getElementsByTagName(n)[0];
+						m.async = 1;
+						m.src = a;
+						i.parentNode.insertBefore(m, i);
+					})(window, document, 'script', 'asteroids.js', 'konami');
+				}}
+				else
+				{
+					konamiIndex = 0;
+				}
+
+		};
+
+		window.addEventListener("keydown", konamiHandler);
+
+	</script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-8709696-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+</body>
+
+</html>
