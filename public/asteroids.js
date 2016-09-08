@@ -652,11 +652,12 @@
 				this.beginPath();
 				this.arc(a[b].pos.x, a[b].pos.y, bulletRadius, 0, PI_SQ, true);
 				this.closePath();
-				this.fill()
+				this.fillStyle = "#fff";
+				this.fill();
 			}
 		};
 		var randomParticleColor = function () {
-			return ["red", "yellow"][random(0, 1)]
+			return ["#77f", "#7f7"][random(0, 1)]
 		};
 		this.ctx.drawParticles = function (a) {
 			var b = this.fillStyle;
