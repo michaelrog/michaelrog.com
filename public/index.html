@@ -57,13 +57,23 @@
 		}
 
 		body {
-			color: #fff;
 			background-color: #111;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			-khtml-user-select: none;
-			-webkit-user-select: none;
-			-webkit-touch-callout: none;
+			color: #fff;
+			height: 100vh;
+			margin: 0;
+			min-height: 500px;
+			position: relative;
+			padding: 0;
+			width: 100vw;
+		}
+
+		::selection {
+			background: #999;
+			color: #fff;
+		}
+		::-moz-selection {
+			background: #999;
+			color: #fff;
 		}
 
 		.bgCode {
@@ -73,6 +83,11 @@
 			margin: 30px;
 			overflow: hidden;
 			position: fixed;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-khtml-user-select: none;
+			-webkit-user-select: none;
+			-webkit-touch-callout: none;
 		}
 
 		.bgCode span {
@@ -96,29 +111,45 @@
 		}
 
 		.awesomeSauce {
-			font-family: "Abril Fatface", serif;
-			min-width: 100px;
-			max-width: 64%;
-			position: fixed;
-			letter-spacing: .4px;
 			background: #111;
+			font-family: "Abril Fatface", serif;
+			letter-spacing: .4px;
+			max-width: 64%;
+			min-width: 100px;
+			padding: 10px;
+			position: absolute;
+			z-index: 42;
 		}
+
 		.superBio {
 			font-size: 28px;
 			left: 18px;
 			line-height: 1.3;
-			padding: 15px;
 			top: 118px;
-			z-index: 42;
 		}
 
 		.contactInfo {
 			bottom: 90px;
 			font-size: 1rem;
-			line-height: 2;
-			padding: 15px;
+			line-height: 1.8;
 			right: 18px;
-			z-index: 42;
+		}
+
+		@media (max-width: 321px) {
+			.superBio {
+				left: 0;
+				max-width: 90%;
+				padding: 5%;
+				top: 80px;
+				width: 90%;
+			}
+			.contactInfo {
+				bottom: 20px;
+				max-width: 90%;
+				padding: 5%;
+				right: 0;
+				width: 90%;
+			}
 		}
 
 		a, a:link, a:visited, a:active {
