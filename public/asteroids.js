@@ -619,9 +619,8 @@
 			this.closePath()
 		};
 
-		//var THEPLAYER=false;if(window.KICKASSIMG){THEPLAYER=document.createElement("img"); THEPLAYER.src=window.KICKASSIMG}
 		var THEPLAYER = document.createElement("img");
-		THEPLAYER.src = "aaron.png";
+		THEPLAYER.src = ["aaron.png", "brad.png"][random(0, 1)];
 		this.ctx.drawPlayer = function () {
 			if (!THEPLAYER) {
 				this.save();
