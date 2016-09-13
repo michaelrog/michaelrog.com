@@ -41,7 +41,7 @@
 	<div id="bgCodeContainer" class="bgCode"></div>
 
 	<div class="awesomeSauce superBio" id="bang">
-		I write <a href="https://github.com/michaelrog">code</a>. I teach code. I <a href="http://cirquelavie.net">fly</a> on trapeze. I help <a href="https://topshelfcraft.com">bring your vision to life</a> on&nbsp;the&nbsp;web.
+		I <a href="https://github.com/michaelrog">code</a>. I <a href="http://2016.cssconf.com.au/">teach</a>. I <a href="http://cirquelavie.net">fly</a> on trapeze. I help <a href="https://topshelfcraft.com">bring your vision to life</a> on&nbsp;the&nbsp;web<span id="punc">.</span>
 	</div>
 
 	<div class="awesomeSauce contactInfo">
@@ -152,6 +152,27 @@
 			}
 		}
 
+		@keyframes pulse {
+			0% { color: #fff; }
+			9% { color: #9f9; }
+			25% { color: #fff; }
+		}
+		.awesomeSauce a {
+			animation: pulse 7s infinite;
+		}
+		.awesomeSauce a:nth-child(1){
+			animation-delay: 1s;
+		}
+		.awesomeSauce a:nth-child(2){
+			animation-delay: 2s;
+		}
+		.awesomeSauce a:nth-child(3){
+			animation-delay: 1.5s;
+		}
+		.awesomeSauce a:nth-child(4){
+			animation-delay: 2.5s;
+		}
+
 		a, a:link, a:visited, a:active {
 			border-bottom: 1px dotted #343444;
 			color: #fff;
@@ -160,7 +181,10 @@
 			transition: all .5s ease;
 		}
 		a:hover {
+			animation: none;
+			border-bottom: 1px dotted #99f;
 			color: #99f;
+			transition: all .5s ease;
 		}
 
 		#ASTEROIDS-NAVIGATION, #ASTEROIDS-NAVIGATION *, #ASTEROIDS-POINTS {
@@ -185,12 +209,13 @@
 
 		// --- The famous exclamation point
 
+		var punc = document.getElementById('punc');
 		var bang = document.getElementById('bang');
 		bang.addEventListener('mouseover', function(){
-			bang.innerHTML = bang.innerHTML.trim().slice(0, -1) + "!";
+			punc.innerHTML = "!";
 		});
 		bang.addEventListener('mouseout', function(){
-			bang.innerHTML = bang.innerHTML.trim().slice(0, -1) + ".";
+			punc.innerHTML = ".";
 		});
 
 		// --- Konami code
