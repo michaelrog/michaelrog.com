@@ -36,7 +36,8 @@
 			"https://www.linkedin.com/in/michaelrog/",
 			"https://www.facebook.com/michaelrog",
 			"https://motivationalpenguin.com"
-		]
+		],
+		"image": "https://michaelrog.com/michael-rog.jpg",
 	}
 	</script>
 
@@ -71,13 +72,13 @@
 <body>
 
 	<div class="awesomeSauce superBio" id="bang">
-		I <a href="https://github.com/michaelrog">code</a>. I <a href="http://2016.cssconf.com.au/">teach</a>. I <a href="http://cirquelavie.net">fly</a> on trapeze. I help <a href="https://topshelfcraft.com">bring your vision to life</a> on&nbsp;the&nbsp;web<span id="punc">.</span>
+		I <a href="https://github.com/michaelrog">code</a>. I <a href="https://www.youtube.com/watch?v=ybQwpqD3VCU">teach</a>. I <a href="https://www.instagram.com/rogzor/">travel</a>. I help you hone your <a href="https://topshelfcraft.com">craft</a> and bring your vision to life on&nbsp;the&nbsp;web<span id="punc">.</span>
 	</div>
 
 	<div class="awesomeSauce contactInfo">
 		<a id="mailz">&#109;ichael &#64; &#109;ichaelrog.co&#109;</a>
 		<br> &#55;&#49;&#51;.581.4764
-		<br> <a href="https://twitter.com/michaelrog">/ michaelrog</a>
+		<br> <img src="twitter.svg" width="15"> / <a href="https://twitter.com/michaelrog">michaelrog</a>
 	</div>
 
 	<style>
@@ -133,9 +134,9 @@
 		.bgCode span:hover,
 		.bgCode span:hover + span,
 		.bgCode span:hover + span + span,
-		.bgCode span:hover + span + span + span + span + span + span + span + span + span + span + span + span {
+		.bgCode span:hover + span + span + span + span + span + span + span {
 			background: #222;
-			color: #9f9;
+			color: #ee7;
 			opacity: 1;
 			transition: all 0.05s linear;
 		}
@@ -156,6 +157,7 @@
 			left: 18px;
 			line-height: 1.3;
 			top: 118px;
+			max-width: 777px;
 		}
 
 		.contactInfo {
@@ -184,27 +186,12 @@
 
 		@keyframes pulse {
 			0% { color: #fff; }
-			9% { color: #9f9; }
+			9% { color: #99f; }
 			25% { color: #fff; }
-		}
-		.awesomeSauce a {
-			animation: pulse 7s infinite;
-		}
-		.awesomeSauce a:nth-child(1){
-			animation-delay: 1s;
-		}
-		.awesomeSauce a:nth-child(2){
-			animation-delay: 2s;
-		}
-		.awesomeSauce a:nth-child(3){
-			animation-delay: 1.5s;
-		}
-		.awesomeSauce a:nth-child(4){
-			animation-delay: 2.5s;
 		}
 
 		a, a:link, a:visited, a:active {
-			border-bottom: 1px dotted #343444;
+			border-bottom: 1px dotted #99f;
 			color: #fff;
 			cursor: pointer;
 			text-decoration: none;
